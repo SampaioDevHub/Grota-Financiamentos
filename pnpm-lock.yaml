@@ -58,7 +58,7 @@ importers:
         specifier: ^5
         version: 5.8.3
 
-  apps/grota-financiamentos-website:
+  apps/grota-website:
     dependencies:
       next:
         specifier: 15.4.1
