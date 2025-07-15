@@ -1,7 +1,9 @@
 export default function Home() {
-  return (
-    <section className="flex justify-center items-center">
-      <h1>Grota Plataforma de Financiamento</h1>
-    </section>
-  );
+    return (
+        <div>
+            <div>
+                <h1 className="text-accent-foreground">Container</h1>
+            </div>
+        </div>
+    )
 }
