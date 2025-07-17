@@ -9,6 +9,8 @@ import { useState } from "react";
 import { Menu, User } from "lucide-react";
 import { navItems } from "../../links/Links";
 import Link from "next/link";
+import UserProfile from "../UserProfile/userProfile";
+import AreaDoLogista from "@/src/presentation/layout/features/ModalLogin/AreaDoLogista";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,10 +45,7 @@ const MobileMenu = () => {
             </Link>
           ))}
           <div className="border-t pt-2" />
-          <Button className="justify-center w-40 cursor-pointer">
-            <User />
-            Area do Logista
-          </Button>
+          <AreaDoLogista/>
         </div>
       </SheetContent>
     </Sheet>

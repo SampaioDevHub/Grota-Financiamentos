@@ -2,7 +2,6 @@ import Link from "next/link";
 import DesktopNavigation from "../DesktopNavigation/desktopNavigation";
 import UserProfile from "../UserProfile/userProfile";
 import MobileMenu from "../MobileMenu/mobileMenu";
-import AreaDoLogista from "@/src/presentation/layout/features/ModalLogin/AreaDoLogista";
 
 const Header = () => {
   return (
@@ -22,7 +21,7 @@ const Header = () => {
           {/* DesktopNavigation End */}
 
           {/* UserProfile */}
-          <AreaDoLogista/>
+          <UserProfile/>
           {/* UserProfile End */}
 
           {/* Mobile menu Button */}
