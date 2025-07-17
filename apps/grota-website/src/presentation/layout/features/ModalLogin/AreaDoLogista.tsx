@@ -10,11 +10,15 @@ import { Button } from "../../components/ui/button";
 import { User } from "lucide-react";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "../../components/ui/input";
-import Link from "next/link";
+
 import { ForgotPasswordModal } from "../ForgotPassword/ForgotPasswordModal";
+import { useRouter } from "next/navigation";
+
+
 
 const AreaDoLogista = () => {
   const [open, setOpen] = useState(false);
+  const router =  useRouter()
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -54,7 +58,7 @@ const AreaDoLogista = () => {
             <ForgotPasswordModal />
             {/* Link Esqueceu Password End */}
 
-            <Button className="cursor-pointer">Login</Button>
+            <Button className="cursor-pointer" onClick={() => router.replace("/dashboard") }>Login</Button>
           </section>
         </DialogHeader>
       </DialogContent>
