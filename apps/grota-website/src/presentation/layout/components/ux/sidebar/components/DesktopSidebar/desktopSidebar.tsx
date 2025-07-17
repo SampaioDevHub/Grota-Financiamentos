@@ -3,11 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   BarChart,
   Car,
-  DollarSign,
   Home,
   Menu,
   Settings,
-  UserCircle,
   X,
 } from "lucide-react";
 import { useMediaQuery } from "@/src/presentation/layout/hooks/useMediaQuery";
@@ -24,7 +22,7 @@ export default function SidebarDesktop() {
       onMouseLeave={() => !isMobile && setCollapsed(true)}
       initial={false}
       animate={{ width: collapsed ? 90 : 300 }}
-      transition={{ duration: 0.8, ease: [0.28, 0.1, 0.8, 1] }}
+       transition={{ duration: 0.8, ease: [0.28, 0.2, 0.8, 1] }}
       className="bg-orange-500 text-white shadow-2xl h-full rounded-r-lg flex flex-col overflow-hidden select-none fixed sm:static top-0 left-0 z-50 sm:z-10"
     >
       {/* Topo */}
@@ -45,7 +43,7 @@ export default function SidebarDesktop() {
       </div>
 
       {/* Navegação */}
-      <nav className="flex flex-col gap-3 px-3 pb-4 overflow-y-auto flex-1 transition-all duration-500 ease-in-out">
+      <nav className="flex flex-col gap-3 px-3 pb-4 overflow-y-auto scroll-smooth flex-1 transition-all duration-500 ease-in-out">
         <SidebarItem
           icon={<Home size={20} />}
           label="Dashboard"
@@ -79,14 +77,9 @@ export default function SidebarDesktop() {
           label="Configurações"
           isCollapsed={collapsed}
           submenu={[
-            { label: "Perfil", onClick: () => alert("Perfil clicado") },
-            { label: "Usuários", onClick: () => alert("Usuários clicado") },
+            { label: "Subitem 1", onClick: () => alert("Subitem 1 clicado") },
+            { label: "Subitem 2", onClick: () => alert("Subitem 2 clicado") },
           ]}
-        />
-        <SidebarItem
-          icon={<UserCircle size={20} />}
-          label="Relatórios"
-          isCollapsed={collapsed}
         />
       </nav>
       {/* Rodapé */}
