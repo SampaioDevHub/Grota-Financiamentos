@@ -5,7 +5,7 @@ import MobileMenu from "../MobileMenu/mobileMenu";
 
 const Header = () => {
   return (
-    <header className="bg-foreground border-b border-gray-300">
+    <header className="bg-foreground border-b border-gray-300 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

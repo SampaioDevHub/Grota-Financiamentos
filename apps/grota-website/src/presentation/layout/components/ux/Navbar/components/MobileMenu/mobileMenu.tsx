@@ -6,10 +6,9 @@ import {
 } from "@/src/presentation/layout/components/ui/sheet";
 import { Button } from "@/src/presentation/layout/components/ui/button";
 import { useState } from "react";
-import { Menu, User } from "lucide-react";
+import { Menu } from "lucide-react";
 import { navItems } from "../../links/Links";
 import Link from "next/link";
-import UserProfile from "../UserProfile/userProfile";
 import AreaDoLogista from "@/src/presentation/layout/features/ModalLogin/AreaDoLogista";
 
 const MobileMenu = () => {
