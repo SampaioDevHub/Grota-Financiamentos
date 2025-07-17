@@ -1,13 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  BarChart,
-  Car,
-  Home,
-  Menu,
-  Settings,
-  X,
-} from "lucide-react";
+import { BarChart, Car, Home, Menu, Settings, X } from "lucide-react";
 import { useMediaQuery } from "@/src/presentation/layout/hooks/useMediaQuery";
 import SidebarItem from "../SidebarItem/sidebarItem";
 
@@ -21,19 +14,31 @@ export default function SidebarDesktop() {
       onMouseEnter={() => !isMobile && setCollapsed(false)}
       onMouseLeave={() => !isMobile && setCollapsed(true)}
       initial={false}
-      animate={{ width: collapsed ? 90 : 300 }}
-       transition={{ duration: 0.8, ease: [0.28, 0.2, 0.8, 1] }}
+      animate={{ width: collapsed ? 90 : 220 }}
+      transition={{ duration: 0.8, ease: [0.28, 0.2, 0.8, 1] }}
       className="bg-orange-500 text-white shadow-2xl h-full rounded-r-lg flex flex-col overflow-hidden select-none fixed sm:static top-0 left-0 z-50 sm:z-10"
     >
       {/* Topo */}
       <div className="flex items-center justify-between h-16 px-4 transition-all duration-500">
-        <span
-          className={`text-xl font-bold truncate transition-all duration-500 ${
-            collapsed ? "text-center w-[60px]" : "w-full"
+        <div
+          className={`flex items-center gap-2 transition-all duration-500 ${
+            collapsed ? "justify-center w-[60px]" : "justify-start w-full"
           }`}
         >
-          {!collapsed ? "Grota Financiamentos" : "GF"}
-        </span>
+          <img
+            src={collapsed ? "/logo-icon.svg" : "/logo-full.svg"}
+            alt="Logo"
+            className={`transition-all duration-500 ${
+              collapsed ? "h-6 w-6" : "h-6"
+            }`}
+          />
+
+          {!collapsed && (
+            <span className="text-xl font-bold truncate text-white">
+              Grota Financiamentos
+            </span>
+          )}
+        </div>
 
         {isMobile && (
           <button onClick={() => setMobileOpen(false)} className="text-white">
@@ -44,6 +49,25 @@ export default function SidebarDesktop() {
 
       {/* Navegação */}
       <nav className="flex flex-col gap-3 px-3 pb-4 overflow-y-auto scroll-smooth flex-1 transition-all duration-500 ease-in-out">
+        <SidebarItem
+          icon={<Home size={20} />}
+          label="Dashboard"
+          isCollapsed={collapsed}
+          submenu={[
+            { label: "Subitem 1", onClick: () => alert("Subitem 1 clicado") },
+            { label: "Subitem 2", onClick: () => alert("Subitem 2 clicado") },
+          ]}
+        />
+
+        <SidebarItem
+          icon={<Home size={20} />}
+          label="Dashboard"
+          isCollapsed={collapsed}
+          submenu={[
+            { label: "Subitem 1", onClick: () => alert("Subitem 1 clicado") },
+            { label: "Subitem 2", onClick: () => alert("Subitem 2 clicado") },
+          ]}
+        />
         <SidebarItem
           icon={<Home size={20} />}
           label="Dashboard"
@@ -77,7 +101,7 @@ export default function SidebarDesktop() {
           label="Configurações"
           isCollapsed={collapsed}
           submenu={[
-            { label: "Subitem 1", onClick: () => alert("Subitem 1 clicado") },
+            { label: "Subitem 2", href: "" },
             { label: "Subitem 2", onClick: () => alert("Subitem 2 clicado") },
           ]}
         />

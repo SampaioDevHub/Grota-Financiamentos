@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
+"use client";
 
-  ChevronDown,
-  ChevronUp,
-} from "lucide-react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface SubmenuItem {
   label: string;
+  href?: string;
   onClick?: () => void;
 }
 
@@ -18,9 +18,10 @@ interface SidebarItemProps {
   isCollapsed: boolean;
 }
 
-function SidebarItem({ icon, label, submenu, isCollapsed }: SidebarItemProps) {
+export default function SidebarItem({ icon, label, submenu, isCollapsed }: SidebarItemProps) {
   const [open, setOpen] = useState(false);
   const hasSubmenu = submenu && submenu.length > 0;
+  const router = useRouter();
 
   const handleClick = () => {
     if (!isCollapsed && hasSubmenu) {
@@ -53,9 +54,7 @@ function SidebarItem({ icon, label, submenu, isCollapsed }: SidebarItemProps) {
           )}
         </div>
         {!isCollapsed && hasSubmenu && (
-          <span>
-            {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-          </span>
+          <span>{open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}</span>
         )}
       </div>
 
@@ -71,7 +70,10 @@ function SidebarItem({ icon, label, submenu, isCollapsed }: SidebarItemProps) {
             {submenu.map((item, idx) => (
               <div
                 key={idx}
-                onClick={item.onClick}
+                onClick={() => {
+                  if (item.onClick) item.onClick();
+                  if (item.href) router.push(item.href);
+                }}
                 className="cursor-pointer rounded px-2 py-1 text-sm hover:bg-orange-700"
               >
                 {item.label}
@@ -83,5 +85,3 @@ function SidebarItem({ icon, label, submenu, isCollapsed }: SidebarItemProps) {
     </div>
   );
 }
-
-export default SidebarItem;
