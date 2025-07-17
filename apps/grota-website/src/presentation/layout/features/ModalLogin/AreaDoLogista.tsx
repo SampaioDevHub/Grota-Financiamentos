@@ -10,6 +10,8 @@ import { Button } from "../../components/ui/button";
 import { User } from "lucide-react";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "../../components/ui/input";
+import Link from "next/link";
+import { ForgotPasswordModal } from "../ForgotPassword/ForgotPasswordModal";
 
 const AreaDoLogista = () => {
   const [open, setOpen] = useState(false);
@@ -47,6 +49,10 @@ const AreaDoLogista = () => {
               </Label>
               <Input id="password" type="password" placeholder="*********" />
             </div>
+
+            {/* Link Esqueceu Password */}
+            <ForgotPasswordModal />
+            {/* Link Esqueceu Password End */}
 
             <Button className="cursor-pointer">Login</Button>
           </section>
