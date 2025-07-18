@@ -14,18 +14,18 @@ import { Input } from "../../components/ui/input";
 import { ForgotPasswordModal } from "../ForgotPassword/ForgotPasswordModal";
 import { useRouter } from "next/navigation";
 
-
-
 const AreaDoLogista = () => {
   const [open, setOpen] = useState(false);
-  const router =  useRouter()
+  const router = useRouter();
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="cursor-pointer" onClick={() => setOpen(true)}>
+        <Button
+          className="cursor-pointer"
+        >
           <User className="h-5 w-5" />
-          Area do Logista
+          Área do Logista
         </Button>
       </DialogTrigger>
 
@@ -58,7 +58,12 @@ const AreaDoLogista = () => {
             <ForgotPasswordModal />
             {/* Link Esqueceu Password End */}
 
-            <Button className="cursor-pointer" onClick={() => router.replace("/dashboard") }>Login</Button>
+            <Button
+              className="cursor-pointer"
+              onClick={() => router.replace("/dashboard")}
+            >
+              Login
+            </Button>
           </section>
         </DialogHeader>
       </DialogContent>

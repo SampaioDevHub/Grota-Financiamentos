@@ -1,7 +1,59 @@
 {
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ]
+    "workbench.colorTheme": "Aura Dark (Soft Text)",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.tree.indent": 16,
+    "explorer.compactFolders": false,
+    "json.schemas": [
+    
+
+
+    ],
+    
+    "git.suggestSmartCommit": false,
+    "git.autofetch": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "launch": {
+        "configurations": [
+        
+        ]
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.confirmSync": false,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+    },
+    
+    "workbench.productIconTheme": "fluent-icons",
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "[dockercompose]": {
+        "editor.defaultFormatter": "docker.docker"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    
+    "workbench.editor.empty.hint": "hidden",
+  
 }

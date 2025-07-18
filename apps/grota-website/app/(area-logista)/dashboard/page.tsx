@@ -8,7 +8,6 @@ import {
 } from "@/src/presentation/layout/components/ui/card";
 import { Header } from "@/src/presentation/layout/components/ux/Header/components/headerContainer";
 
-
 export default function Dashboard() {
   return (
     <PageContainer>
